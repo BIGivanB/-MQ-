@@ -11,9 +11,17 @@ def start_template(w):
 
 
 def list_to_string_convert(t):
+    s=''
     for i in t:
         s += i
     return s
+
+def check_mistake(w,g):
+    for i in w:
+        if i==g:
+            return True
+    return False
+        
 
 def user_input():
     return input('Введите букву:')
@@ -50,4 +58,16 @@ def game():
         print(f'Результат: {guessed}')
         progress = check_win(guessed)
         if not check_mistake(word_in_play, user_guess):
+            print(f'Осталось {lifes} попытки')
+            lifes-= 1
+        if lifes ==0:
+            print('ты проиграл')
+            break
+        
+        if not progress:
+            print('ты выиграл')
+
+
+
+game()
     
