@@ -72,3 +72,17 @@ from module import function as f
 
 f()
 
+
+
+                         РАБОТА С ФАЙЛАМИ
+
+with open('new file', 'wt') as f:
+ 
+      f.write('Hello world')
+
+
+f = open('no_with','w')
+
+some_text = f.read()
+
+f.close()
